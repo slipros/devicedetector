@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	. "github.com/gamebtc/devicedetector/parser"
+	. "github.com/slipros/devicedetector/parser"
 	"gotest.tools/assert"
 )
 
@@ -23,4 +23,3 @@ func TestConsoleParse(t *testing.T) {
 		assert.DeepEqual(t, test, r)
 	}
 }
-

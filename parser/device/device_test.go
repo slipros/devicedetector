@@ -1,13 +1,13 @@
 package device
 
-import(
-	. "github.com/gamebtc/devicedetector/parser"
+import (
+	. "github.com/slipros/devicedetector/parser"
 )
 
 const dir = "../../regexes/device"
 
 type DeviceFixtureResult struct {
-	Type  int `yaml:"type"`
+	Type  int    `yaml:"type"`
 	Model string `yaml:"model"`
 	Brand string `yaml:"brand"`
 }
@@ -17,7 +17,7 @@ type DeviceFixture struct {
 	DeviceFixtureResult `yaml:"device"`
 }
 
-func (d *DeviceFixture)GetDeviceMatchResult()*DeviceMatchResult {
+func (d *DeviceFixture) GetDeviceMatchResult() *DeviceMatchResult {
 	return &DeviceMatchResult{
 		Model: d.Model,
 		Brand: d.Brand,
