@@ -16,6 +16,7 @@ var availableEngines = []string{
 	`iCab`,
 	`Elektra`,
 	`Presto`,
+	`Clecko`,
 	`Gecko`,
 	`KHTML`,
 	`NetFront`,
@@ -23,6 +24,9 @@ var availableEngines = []string{
 	`NetSurf`,
 	`Servo`,
 	`Goanna`,
+	`EkiohFlow`,
+	`Arachne`,
+	`LibWeb`,
 }
 
 const ParserNameBrowserEngine = `browserengine`
