@@ -8,13 +8,13 @@
 - regex: 'NetFront'
   name: 'NetFront'
 
-- regex: 'Edge'
+- regex: 'Edge/'
   name: 'Edge'
 
 - regex: 'Trident'
   name: 'Trident'
 
-- regex: 'Blink'
+- regex: 'Chr[o0]me/(?!1?\d\.|2[0-7]\.)'
   name: 'Blink'
 
 - regex: '(?:Apple)?WebKit'
@@ -22,6 +22,12 @@
 
 - regex: 'Presto'
   name: 'Presto'
+
+- regex: 'Goanna'
+  name: 'Goanna'
+
+- regex: '(?<!like )Clecko' # fork of Gecko
+  name: 'Clecko'
 
 - regex: '(?<!like )Gecko'
   name: 'Gecko'
@@ -35,5 +41,11 @@
 - regex: 'Servo'
   name: 'Servo'
 
-- regex: 'Goanna'
-  name: 'Goanna'
+- regex: 'Ekioh(?:Flow)?'
+  name: 'EkiohFlow'
+
+- regex: 'xChaos_Arachne'
+  name: 'Arachne'
+
+- regex: 'LibWeb\+LibJs'
+  name: 'LibWeb'
