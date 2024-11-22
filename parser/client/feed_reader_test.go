@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestFeedReaderParse(t *testing.T) {
-	ps := NewFeedReader(filepath.Join(dir, FixtureFileFeedReader))
+	ps := NewFeedReader(path.Join(dir, FixtureFileFeedReader))
 	var list []*ClientFixture
 	err := ReadYamlFile(`fixtures/feed_reader.yml`, &list)
 	if err != nil {

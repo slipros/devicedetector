@@ -24,17 +24,17 @@ func TestParseInvalidUA(t *testing.T) {
 
 func TestInstanceReusage(t *testing.T) {
 	userAgents := [][]string{
-		[]string{
+		{
 			`Sraf/3.0 (Linux i686 ; U; HbbTV/1.1.1 (+PVR+DL;NEXtUS; TV44; sw1.0) CE-HTML/1.0 Config(L:eng,CC:DEU); en/de)`,
 			``,
 			``,
 		},
-		[]string{
+		{
 			`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`,
 			`Archos`,
 			`101 PLATINUM`,
 		},
-		[]string{
+		{
 			`Opera/9.80 (Linux mips; U; HbbTV/1.1.1 (; Vestel; MB95; 1.0; 1.0; ); en) Presto/2.10.287 Version/12.00`,
 			`Vestel`,
 			`MB95`,
@@ -50,11 +50,11 @@ func TestInstanceReusage(t *testing.T) {
 
 func TestVersionTruncation(t *testing.T) {
 	data := map[int][]string{
-		VERSION_TRUNCATION_NONE:  []string{`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2.2`, `34.0.1847.114`},
-		VERSION_TRUNCATION_BUILD: []string{`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2.2`, `34.0.1847.114`},
-		VERSION_TRUNCATION_PATCH: []string{`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2.2`, `34.0.1847`},
-		VERSION_TRUNCATION_MINOR: []string{`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2`, `34.0`},
-		VERSION_TRUNCATION_MAJOR: []string{`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4`, `34`},
+		VERSION_TRUNCATION_NONE:  {`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2.2`, `34.0.1847.114`},
+		VERSION_TRUNCATION_BUILD: {`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2.2`, `34.0.1847.114`},
+		VERSION_TRUNCATION_PATCH: {`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2.2`, `34.0.1847`},
+		VERSION_TRUNCATION_MINOR: {`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4.2`, `34.0`},
+		VERSION_TRUNCATION_MAJOR: {`Mozilla/5.0 (Linux; Android 4.2.2; ARCHOS 101 PLATINUM Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Safari/537.36`, `4`, `34`},
 	}
 	for k, v := range data {
 		SetVersionTruncation(k)

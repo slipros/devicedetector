@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameMediaPlayer = `mediaplayer`
@@ -10,7 +10,7 @@ const FixtureFileMediaPlayer = `mediaplayers.yml`
 func init() {
 	RegClientParser(ParserNameMediaPlayer,
 		func(dir string) ClientParser {
-			return NewMediaPlayer(filepath.Join(dir, FixtureFileMediaPlayer))
+			return NewMediaPlayer(path.Join(dir, FixtureFileMediaPlayer))
 		})
 }
 

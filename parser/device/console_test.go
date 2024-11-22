@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestConsoleParse(t *testing.T) {
-	ps := NewConsole(filepath.Join(dir, FixtureFileConsole))
+	ps := NewConsole(path.Join(dir, FixtureFileConsole))
 	var list []*DeviceFixture
 	err := ReadYamlFile(`fixtures/console.yml`, &list)
 	if err != nil {

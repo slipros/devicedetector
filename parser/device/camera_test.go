@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestCameraParse(t *testing.T) {
-	ps := NewCamera(filepath.Join(dir, FixtureFileCamera))
+	ps := NewCamera(path.Join(dir, FixtureFileCamera))
 	var list []*DeviceFixture
 	err := ReadYamlFile(`fixtures/camera.yml`, &list)
 	if err != nil {

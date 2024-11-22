@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNamePim = `pim`
@@ -10,7 +10,7 @@ const FixtureFilePim = `pim.yml`
 func init() {
 	RegClientParser(ParserNamePim,
 		func(dir string) ClientParser {
-			return NewPim(filepath.Join(dir, FixtureFilePim))
+			return NewPim(path.Join(dir, FixtureFilePim))
 		})
 }
 

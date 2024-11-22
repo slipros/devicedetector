@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestLibraryParse(t *testing.T) {
-	var ps = NewLibrary(filepath.Join(dir, FixtureFileLibrary))
+	var ps = NewLibrary(path.Join(dir, FixtureFileLibrary))
 	var list []*ClientFixture
 	err := ReadYamlFile(`fixtures/library.yml`, &list)
 	if err != nil {

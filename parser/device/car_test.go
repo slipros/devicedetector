@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestCarParse(t *testing.T) {
-	ps := NewCar(filepath.Join(dir, FixtureFileCar))
+	ps := NewCar(path.Join(dir, FixtureFileCar))
 	var list []*DeviceFixture
 	err := ReadYamlFile(`fixtures/car_browser.yml`, &list)
 	if err != nil {

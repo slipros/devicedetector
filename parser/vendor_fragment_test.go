@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	"gotest.tools/assert"
@@ -12,7 +12,7 @@ func TestVendorParse(t *testing.T) {
 		Vendor    string `yaml:"vendor"`
 		UserAgent string `yaml:"useragent"`
 	}
-	var vendorParser, _ = NewVendor(filepath.Join(dir, FixtureFileVendor))
+	var vendorParser, _ = NewVendor(path.Join(dir, FixtureFileVendor))
 	var list []VendorFixture
 	err := ReadYamlFile(`fixtures/vendorfragments.yml`, &list)
 	if err != nil {

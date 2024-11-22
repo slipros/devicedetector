@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	"gotest.tools/assert"
@@ -13,7 +13,7 @@ func TestOsParse(t *testing.T) {
 		UserAgent     string `yaml:"user_agent" json:"user_agent"`
 	}
 
-	var osParser, _ = NewOss(filepath.Join(dir, FixtureFileOs))
+	var osParser, _ = NewOss(path.Join(dir, FixtureFileOs))
 
 	var list []OsFixture
 	err := ReadYamlFile(`fixtures/oss.yml`, &list)

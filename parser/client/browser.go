@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 
 	gover "github.com/mcuadros/go-version"
 
@@ -838,7 +838,7 @@ const FixtureFileBrowser = `browsers.yml`
 func init() {
 	RegClientParser(ParserNameBrowser,
 		func(dir string) ClientParser {
-			return NewBrowser(filepath.Join(dir, FixtureFileBrowser))
+			return NewBrowser(path.Join(dir, FixtureFileBrowser))
 		})
 }
 

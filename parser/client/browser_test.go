@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestBrowserParse(t *testing.T) {
-	ps := NewBrowser(filepath.Join(dir, FixtureFileBrowser))
+	ps := NewBrowser(path.Join(dir, FixtureFileBrowser))
 	var list []*ClientFixture
 	err := ReadYamlFile(`fixtures/browser.yml`, &list)
 	if err != nil {

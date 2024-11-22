@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestPimParse(t *testing.T) {
-	ps := NewPim(filepath.Join(dir, FixtureFilePim))
+	ps := NewPim(path.Join(dir, FixtureFilePim))
 	var list []*ClientFixture
 	err := ReadYamlFile(`fixtures/pim.yml`, &list)
 	if err != nil {

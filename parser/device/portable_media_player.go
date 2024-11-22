@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNamePortableMediaPlayer = `portablemediaplayer`
@@ -10,7 +10,7 @@ const FixtureFilePortableMediaPlayer = `portable_media_player.yml`
 func init() {
 	RegDeviceParser(ParserNamePortableMediaPlayer,
 		func(dir string) DeviceParser {
-			return NewPortableMediaPlayer(filepath.Join(dir, FixtureFilePortableMediaPlayer))
+			return NewPortableMediaPlayer(path.Join(dir, FixtureFilePortableMediaPlayer))
 		})
 }
 

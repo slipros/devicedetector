@@ -2,12 +2,17 @@ package parser
 
 import (
 	"errors"
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
+	"os"
 	"strconv"
 	"strings"
 
+	"gopkg.in/yaml.v2"
+
 	regexp "github.com/dlclark/regexp2"
+)
+
+var (
+	ReadFile = os.ReadFile
 )
 
 const Unknown = "Unknown"
@@ -57,12 +62,13 @@ func ArrayContainsString(list []string, v string) bool {
 	return false
 }
 
-func ReadYamlFile(file string, v interface{}) error {
-	data, err := ioutil.ReadFile(file)
+func ReadYamlFile(file string, ptr any) error {
+	data, err := ReadFile(file)
 	if err != nil {
 		return errors.New("not exists:" + file)
 	}
-	return yaml.Unmarshal(data, v)
+
+	return yaml.Unmarshal(data, ptr)
 }
 
 type MatchResult interface {
@@ -142,9 +148,10 @@ func BuildVersion(versionString string, matches []string) string {
 	return ver
 }
 
-var(
+var (
 	tdReg = regexp.MustCompile(` TD$`, regexp.IgnoreCase)
 )
+
 func BuildModel(m string, matches []string) string {
 	model := BuildByMatch(m, matches)
 	model = strings.ReplaceAll(model, "_", " ")

@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameMobile = `mobile`
@@ -10,7 +10,7 @@ const FixtureFileMobile = `mobiles.yml`
 func init() {
 	RegDeviceParser(ParserNameMobile,
 		func(dir string) DeviceParser {
-			return NewMobile(filepath.Join(dir, FixtureFileMobile))
+			return NewMobile(path.Join(dir, FixtureFileMobile))
 		})
 }
 

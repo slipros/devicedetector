@@ -29,6 +29,9 @@ import (
 )
 
 func main() {
+	// switch to use embedded regexes
+	// parser.ReadFile = devicedetector.EmbeddedRegexes.ReadFile
+	
 	dd, err := NewDeviceDetector("regexes")
 	if err != nil {
 		log.Fatal(err)

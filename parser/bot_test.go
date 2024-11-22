@@ -1,12 +1,13 @@
 package parser
 
 import (
-	"gotest.tools/assert"
-	"path/filepath"
+	"path"
 	"testing"
+
+	"gotest.tools/assert"
 )
 
-var botParser = NewBot(filepath.Join(dir, FixtureFileBot))
+var botParser = NewBot(path.Join(dir, FixtureFileBot))
 
 func TestGetInfoFromUABot(t *testing.T) {
 	ua := `Googlebot/2.1 (http://www.googlebot.com/bot.html)`

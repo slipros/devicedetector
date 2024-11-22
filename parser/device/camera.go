@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameCamera = `camera`
@@ -10,7 +10,7 @@ const FixtureFileCamera = `cameras.yml`
 func init() {
 	RegDeviceParser(ParserNameCamera,
 		func(dir string) DeviceParser {
-			return NewCamera(filepath.Join(dir, FixtureFileCamera))
+			return NewCamera(path.Join(dir, FixtureFileCamera))
 		})
 }
 
