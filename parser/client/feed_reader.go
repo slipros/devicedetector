@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameFeedReader = `feed reader`
@@ -10,7 +10,7 @@ const FixtureFileFeedReader = `feed_readers.yml`
 func init() {
 	RegClientParser(ParserNameFeedReader,
 		func(dir string) ClientParser {
-			return NewFeedReader(filepath.Join(dir, FixtureFileFeedReader))
+			return NewFeedReader(path.Join(dir, FixtureFileFeedReader))
 		})
 }
 

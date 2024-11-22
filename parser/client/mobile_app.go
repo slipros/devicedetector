@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameMobileApp = `mobile app`
@@ -10,7 +10,7 @@ const FixtureFileMobileApp = `mobile_apps.yml`
 func init() {
 	RegClientParser(ParserNameMobileApp,
 		func(dir string) ClientParser {
-			return NewMobileApp(filepath.Join(dir, FixtureFileMobileApp))
+			return NewMobileApp(path.Join(dir, FixtureFileMobileApp))
 		})
 }
 

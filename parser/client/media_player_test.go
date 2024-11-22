@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 	"testing"
 
 	. "github.com/slipros/devicedetector/parser"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestMediaPlayerParse(t *testing.T) {
-	ps := NewMediaPlayer(filepath.Join(dir, FixtureFileMediaPlayer))
+	ps := NewMediaPlayer(path.Join(dir, FixtureFileMediaPlayer))
 	var list []*ClientFixture
 	err := ReadYamlFile(`fixtures/mediaplayer.yml`, &list)
 	if err != nil {

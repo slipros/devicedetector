@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 
 	. "github.com/slipros/devicedetector/parser"
 )
@@ -12,7 +12,7 @@ const FixtureFileHbbTv = `televisions.yml`
 func init() {
 	RegDeviceParser(ParserNameHbbTv,
 		func(dir string) DeviceParser {
-			return NewHbbTv(filepath.Join(dir, FixtureFileHbbTv))
+			return NewHbbTv(path.Join(dir, FixtureFileHbbTv))
 		})
 }
 

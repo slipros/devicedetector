@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameCar = `car browser`
@@ -10,7 +10,7 @@ const FixtureFileCar = `car_browsers.yml`
 func init() {
 	RegDeviceParser(ParserNameCar,
 		func(dir string) DeviceParser {
-			return NewCar(filepath.Join(dir, FixtureFileCar))
+			return NewCar(path.Join(dir, FixtureFileCar))
 		})
 }
 

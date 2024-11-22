@@ -3,13 +3,14 @@ package parser
 import (
 	"encoding/json"
 	"fmt"
-	"path/filepath"
+	"path"
 	"testing"
 )
 
 const dir = "../regexes"
+
 func TestVendors(t *testing.T) {
-	if v, err := NewVendor(filepath.Join(dir, FixtureFileVendor)); err != nil {
+	if v, err := NewVendor(path.Join(dir, FixtureFileVendor)); err != nil {
 		t.Fatal(err)
 	} else if v == nil {
 		t.Fatal("value is null")

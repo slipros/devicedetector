@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 
 	. "github.com/slipros/devicedetector/parser"
 )
@@ -35,7 +35,7 @@ const FixtureFileBrowserEngine = `browser_engine.yml`
 func init() {
 	RegClientParser(ParserNameBrowserEngine,
 		func(dir string) ClientParser {
-			return NewBrowserEngine(filepath.Join(dir, FixtureFileBrowserEngine))
+			return NewBrowserEngine(path.Join(dir, FixtureFileBrowserEngine))
 		})
 }
 

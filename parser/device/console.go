@@ -1,7 +1,7 @@
 package device
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameConsole = `console`
@@ -10,7 +10,7 @@ const FixtureFileConsole = `consoles.yml`
 func init() {
 	RegDeviceParser(ParserNameConsole,
 		func(dir string) DeviceParser {
-			return NewConsole(filepath.Join(dir, FixtureFileConsole))
+			return NewConsole(path.Join(dir, FixtureFileConsole))
 		})
 }
 

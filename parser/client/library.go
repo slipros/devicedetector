@@ -1,7 +1,7 @@
 package client
 
 import (
-	"path/filepath"
+	"path"
 )
 
 const ParserNameLibrary = `library`
@@ -10,7 +10,7 @@ const FixtureFileLibrary = `libraries.yml`
 func init() {
 	RegClientParser(ParserNameLibrary,
 		func(dir string) ClientParser {
-			return NewLibrary(filepath.Join(dir, FixtureFileLibrary))
+			return NewLibrary(path.Join(dir, FixtureFileLibrary))
 		})
 }
 

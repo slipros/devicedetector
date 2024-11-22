@@ -1,6 +1,8 @@
 package parser
 
-import "path/filepath"
+import (
+	"path"
+)
 
 var botFactory = make(map[string]func(string) BotParser)
 
@@ -26,7 +28,7 @@ const FixtureFileBot = `bots.yml`
 func init() {
 	RegBotParser(ParserNameBot,
 		func(dir string) BotParser {
-			return NewBot(filepath.Join(dir, FixtureFileBot))
+			return NewBot(path.Join(dir, FixtureFileBot))
 		})
 }
 
