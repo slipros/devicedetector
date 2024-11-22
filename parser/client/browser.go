@@ -5,7 +5,7 @@ import (
 
 	gover "github.com/mcuadros/go-version"
 
-	. "github.com/gamebtc/devicedetector/parser"
+	. "github.com/slipros/devicedetector/parser"
 )
 
 // Known browsers mapped to their internal short codes

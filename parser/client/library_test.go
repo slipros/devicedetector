@@ -4,12 +4,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	. "github.com/gamebtc/devicedetector/parser"
+	. "github.com/slipros/devicedetector/parser"
 	"gotest.tools/assert"
 )
 
 func TestLibraryParse(t *testing.T) {
-	var ps= NewLibrary(filepath.Join(dir, FixtureFileLibrary))
+	var ps = NewLibrary(filepath.Join(dir, FixtureFileLibrary))
 	var list []*ClientFixture
 	err := ReadYamlFile(`fixtures/library.yml`, &list)
 	if err != nil {
