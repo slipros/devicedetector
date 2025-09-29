@@ -17,7 +17,7 @@ import (
 var EmbeddedRegexes embed.FS
 
 const UNKNOWN = "UNK"
-const VERSION = `6.4.1`
+const VERSION = `6.4.7`
 
 var desktopOsArray = []string{
 	`AmigaOS`, `IBM`, `GNU/Linux`, `Mac`, `Unix`, `Windows`, `BeOS`, `Chrome OS`, `Chromium OS`,
@@ -47,7 +47,13 @@ type DeviceDetector struct {
 	SkipBotDetection      bool
 }
 
-func NewDeviceDetector(dir string) (*DeviceDetector, error) {
+func NewDeviceDetector() (*DeviceDetector, error) {
+	parser.ReadFile = EmbeddedRegexes.ReadFile
+
+	return newDeviceDetector("./regexes")
+}
+
+func newDeviceDetector(dir string) (*DeviceDetector, error) {
 	vp, err := parser.NewVendor(path.Join(dir, parser.FixtureFileVendor))
 	if err != nil {
 		return nil, err
