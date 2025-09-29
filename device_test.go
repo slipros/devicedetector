@@ -13,7 +13,7 @@ import (
 	"github.com/slipros/devicedetector/parser/device"
 )
 
-var dd, _ = NewDeviceDetector("regexes")
+var dd, _ = newDeviceDetector("regexes")
 
 func TestParseInvalidUA(t *testing.T) {
 	info := dd.Parse(`12345`)

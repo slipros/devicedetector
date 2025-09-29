@@ -8,7 +8,7 @@ import (
 
 // Known browser engines mapped to their internal short codes
 var availableEngines = []string{
-	`WebKit`,
+	`ebKit`,
 	`Blink`,
 	`Trident`,
 	`Text-based`,
@@ -27,6 +27,7 @@ var availableEngines = []string{
 	`EkiohFlow`,
 	`Arachne`,
 	`LibWeb`,
+	`Maple`,
 }
 
 const ParserNameBrowserEngine = `browserengine`

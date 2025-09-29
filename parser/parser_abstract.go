@@ -11,9 +11,7 @@ import (
 	regexp "github.com/dlclark/regexp2"
 )
 
-var (
-	ReadFile = os.ReadFile
-)
+var ReadFile = os.ReadFile
 
 const Unknown = "Unknown"
 const UnknownShort = "UNK"
