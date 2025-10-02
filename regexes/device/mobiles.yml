@@ -14426,10 +14426,10 @@ JAY-Tech:
 
 # Jiayu
 Jiayu:
-  regex: 'JIAYU[ _-]|(?:JY-G4[\\_]G5|(?:JY-[a-z0-9]+)|JY_G4C)(?:[);/ ]|$)'
+  regex: 'JIAYU[ _-]|(?:JY-G4[\_]G5|(?:JY-[a-z0-9]+)|JY_G4C)(?:[);/ ]|$)'
   device: 'smartphone'
   models:
-    - regex: '(?:JIAYU G4_G5|JY-G4[\\_]G5)(?:[);/ ]|$)'
+    - regex: '(?:JIAYU G4_G5|JY-G4[\_]G5)(?:[);/ ]|$)'
       model: 'G4/G5'
     - regex: 'JIAYU[ _-](G4[S]?|G2F|G3[S]?|S[23])(?:[);/ ]|$)'
       model: '$1'
